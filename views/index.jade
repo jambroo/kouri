@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+
+  div(class="col-md-8")
+    table(class="table table-striped")
+      tr
+        th Date
+        th Distance
+        th Time
+      if runs.length
+        each run in runs
+          tr
+            td #{run.date}
+            td #{run.distance}
+            td #{run.time}
+  div(class="col-md-2")
+    table(class="table table-striped")
+      tr
+        th 
+        th Distance
+      each common, index in commonDistances
+        tr
+          td #{common.label}
+          td #{common.distance}

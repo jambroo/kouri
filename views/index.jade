@@ -3,6 +3,16 @@ extends layout
 block content
   h1= title
 
+  div
+    label(for="date") Date
+    input(type="text", id="date", value=today())
+
+    label(for="run") Run
+    input(type="text", id="run")
+
+    label(for="time") Time
+    input(type="text", id="time", data-toggle="tooltip", data-placement="top", title="Enter time in mm:ss fomat.")
+
   div(class="col-md-8")
     table(class="table table-striped")
       tr
@@ -14,7 +24,7 @@ block content
           tr
             td #{run.date}
             td #{run.distance}
-            td #{run.time}
+            td #{formatTime(run.time)}
   div(class="col-md-2")
     table(class="table table-striped")
       tr
@@ -22,5 +32,7 @@ block content
         th Distance
       each common, index in commonDistances
         tr
-          td #{common.label}
+          td
+            span #{common.label} 
+            sup [#{index}]
           td #{common.distance}

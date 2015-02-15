@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-var runs = [{date: '2015-01-14', distance: 10, time: 10.3}]
+var runs = [{date: '2015-01-14', distance: 10, time: 490.3}]
 var commonDistances = {toPark: {label: 'To Park', distance:	1.1},
 	smallLap: {label: 'Small Lap', distance: 1.3},
 	bigLap: {label: 'Big Lap', distance: 1.71},

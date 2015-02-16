@@ -10,11 +10,15 @@ block content
 
     div(class="form-group")
       label(for="run") Run
-      input(type="text", id="run", data-toggle="tooltip", data-placement="top", title="Enter run here with distances codes (listed to right). E.g. 2*toPark+3*smallLap.", class="form-control")
+      span(class="fieldNote") Enter run here with distances codes (listed to right). E.g. 2*toPark+3*smallLap.
+      div.input-group
+        span.input-group-addon x km
+        input(type="text", id="run", class="form-control")
 
     div(class="form-group")
       label(for="time") Time
-      input(type="text", id="time", data-toggle="tooltip", data-placement="top", title="Enter time in mm:ss fomat.", class="form-control")
+      span(class="fieldNote") Enter time in mm:ss fomat.
+      input(type="text", id="time", class="form-control")
 
     div(class="form-group")
       button(id="submit", class="btn btn-default") Save

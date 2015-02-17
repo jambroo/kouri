@@ -3,22 +3,22 @@ extends layout
 block content
   h1= title
 
-  form
-    div(class="form-group")
+  form(name="newNote", method="post")
+    div(class=errors && errors.date ? "form-group has-error" : "form-group")
       label(for="date") Date
-      input(type="text", id="date", value=today(), class="form-control")
+      input(type="text", name="date", id="date", value=errors && errors.date ? errors.date.value : today(), class="form-control")
 
-    div(class="form-group")
+    div(class=errors && errors.run ? "form-group has-error" : "form-group")
       label(for="run") Run
       span(class="fieldNote") Enter run here with distances codes (listed to right). E.g. 2*toPark+3*smallLap.
       div.input-group
         span.input-group-addon x km
-        input(type="text", id="run", class="form-control")
+        input(type="text", id="run", name="run", class="form-control", value=errors && errors.run ? errors.run.value : '')
 
-    div(class="form-group")
-      label(for="time") Time
+    div(class=errors && errors.time ? "form-group has-error" : "form-group")
+      label(for="time", class="control-label") Time
       span(class="fieldNote") Enter time in mm:ss fomat.
-      input(type="text", id="time", class="form-control")
+      input(type="text", id="time", name="time", class="form-control", value=errors && errors.time ? errors.time.value : '')
 
     div(class="form-group")
       button(id="submit", class="btn btn-default") Save
